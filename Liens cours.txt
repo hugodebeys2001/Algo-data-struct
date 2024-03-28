@@ -1,0 +1,6 @@
+Liste et tableau
+https://www.geeksforgeeks.org/data-structures/linked-list/
+Queue
+https://www.geeksforgeeks.org/queue-data-structure/
+Stack
+https://www.geeksforgeeks.org/stack-data-structure/
