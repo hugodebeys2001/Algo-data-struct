@@ -1,3 +1,7 @@
+#https://www.geeksforgeeks.org/problems/k-largest-elements3736/1
+
+import heapq
+
 class Solution:
     def kLargest(self, li, n, k):
         # Créer un tas min de taille k initialisé avec les k premiers éléments
@@ -12,5 +16,10 @@ class Solution:
                 heapq.heappop(min_heap)
                 heapq.heappush(min_heap, num)
 
-        # Le tas min contient maintenant les k plus grands éléments
-        return sorted(min_heap, reverse=True)
+        # Extraire les éléments du tas min dans l'ordre décroissant
+        result = []
+        while min_heap:
+            result.append(heapq.heappop(min_heap))
+
+        # Retourner les éléments dans l'ordre décroissant
+        return result[::-1]
