@@ -1,24 +1,30 @@
+#https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1
+
+import heapq
+
 class Solution:
 
-    # Function to return the sorted array.
+    # Fonction pour retourner le tableau trié.
     def nearlySorted(self, a, n, k):
-        # Create an empty min-heap
+        # Créer un min-heap vide
         min_heap = []
+        # Initialiser le tableau trié vide
         sorted_array = []
 
-        # Push the first k+1 elements into the min-heap
+        # Insérer les k+1 premiers éléments dans le min-heap
         for i in range(k + 1):
             heapq.heappush(min_heap, a[i])
 
-        # Process the remaining elements
+        # Traiter les éléments restants
         for i in range(k + 1, n):
-            # Pop the smallest element from the min-heap
+            # Extraire le plus petit élément du min-heap et l'ajouter au tableau trié
             sorted_array.append(heapq.heappop(min_heap))
-            # Push the next element into the min-heap
+            # Insérer le prochain élément du tableau dans le min-heap
             heapq.heappush(min_heap, a[i])
 
-        # Pop the remaining elements from the min-heap
+        # Extraire les éléments restants du min-heap et les ajouter au tableau trié
         while min_heap:
             sorted_array.append(heapq.heappop(min_heap))
 
+        # Retourner le tableau trié
         return sorted_array
