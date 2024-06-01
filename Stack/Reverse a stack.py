@@ -1,11 +1,12 @@
+#https://www.geeksforgeeks.org/problems/reverse-a-stack/1
+
 from typing import List
 
 class Solution:
     def reverse(self,St):
         liste = []
-        for i in range(len(St)-1, -1, -1):
-            liste.append(St[i])
-        St.clear()
+        while St:
+            liste.append(St.pop())
         for j in liste:
             St.append(j)
         return St
