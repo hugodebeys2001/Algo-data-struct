@@ -1,6 +1,6 @@
-#Function to merge two halves of list.		
+#https://www.geeksforgeeks.org/problems/merge-sort-on-doubly-linked-list/1
+#Function to merge two halves of list.
 def merge(first, second):
-    
     #base cases when either of two halves is null.
     if first is None: 
         return second  
